@@ -59,7 +59,6 @@ FrontEnd
             // 构建Http请求
             if (XMLHttpRequest) {
                 var xhr = new XMLHttpRequest();
-
                 xhr.open('post', '/e/report', true);
                 xhr.setRequestHeader('Content-Type', 'application/json'); // 设置请求头
                 xhr.send(JSON.stringify(errorObj)); // 发送参数
