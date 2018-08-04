@@ -7,6 +7,7 @@ from django_onerror.models import OnerrorReportInfo
 
 class OnerrorReportInfoAdmin(DeleteOnlyModelAdmin, admin.ModelAdmin):
     list_display = ('lineNo', 'columnNo', 'scriptURI', 'errorMessage', 'stack', 'created_at', 'updated_at')
+    search_fields = ('lineNo', 'columnNo', 'scriptURI', 'errorMessage', 'stack')
 
 
 admin.site.register(OnerrorReportInfo, OnerrorReportInfoAdmin)
