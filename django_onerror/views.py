@@ -17,6 +17,7 @@ def err_report(request):
             scriptURI=payload.get('scriptURI', ''),
             errorMessage=payload.get('errorMessage', ''),
             stack=payload.get('stack', ''),
+            extra=payload.get('extra', ''),
         )
 
     return response()
