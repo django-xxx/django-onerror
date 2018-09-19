@@ -13,6 +13,7 @@ class OnerrorReportInfo(BaseModelMixin):
     scriptURI = models.CharField(_(u'scriptURI'), max_length=255, blank=True, null=True, help_text=u'异常文件路径')
     errorMessage = models.CharField(_(u'errorMessage'), max_length=255, blank=True, null=True, help_text=u'异常信息')
     stack = models.TextField(_(u'stack'), blank=True, null=True, help_text=u'异常堆栈信息')
+    extra = models.TextField(_(u'extra'), blank=True, null=True, help_text=u'额外信息')
 
     class Meta:
         verbose_name = _(u'onerrorreportinfo')
