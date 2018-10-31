@@ -9,7 +9,15 @@ from django_response import response
 
 def err_report(request):
     if not hasattr(settings, 'DJANGO_ONERROR_ACCEPT_REPORT') or settings.DJANGO_ONERROR_ACCEPT_REPORT:
-        payload = json.loads(request.body)
+        errmsg = request.body
+
+        if not errmsg:
+            return response()
+
+        try:
+            payload = json.loads(errmsg)
+        except ValueError:
+            return response()
 
         OnerrorReportInfo.objects.create(
             lineNo=payload.get('lineNo', -1),
