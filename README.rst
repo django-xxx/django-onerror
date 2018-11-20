@@ -50,8 +50,8 @@ FrontEnd
         window.onerror = function(errorMessage, scriptURI, lineNo, columnNo, error) {
             // 构建错误对象
             var errorObj = {
-                lineNo: lineNo || null,
-                columnNo: columnNo || null,
+                lineNo: lineNo || 0,
+                columnNo: columnNo || 0,
                 scriptURI: scriptURI || null,
                 errorMessage: errorMessage || null,
                 stack: error && error.stack ? error.stack : null

@@ -20,8 +20,8 @@ def err_report(request):
             return response()
 
         OnerrorReportInfo.objects.create(
-            lineNo=payload.get('lineNo', -1),
-            columnNo=payload.get('columnNo', -1),
+            lineNo=payload.get('lineNo', -1) or 0,
+            columnNo=payload.get('columnNo', -1) or 0,
             scriptURI=payload.get('scriptURI', ''),
             errorMessage=payload.get('errorMessage', ''),
             stack=payload.get('stack', ''),
