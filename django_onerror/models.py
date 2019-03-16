@@ -8,6 +8,8 @@ from django_models_ext import BaseModelMixin
 
 
 class OnerrorReportInfo(BaseModelMixin):
+    href = models.CharField(_(u'href'), max_length=255, blank=True, null=True, help_text=u'window.location.href')
+    ua = models.TextField(_(u'ua'), blank=True, null=True, help_text=u'window.navigator.userAgent')
     lineNo = models.IntegerField(_(u'lineNo'), default=0, help_text=u'异常行号')
     columnNo = models.IntegerField(_(u'columnNo'), default=0, help_text=u'异常列号')
     scriptURI = models.CharField(_(u'scriptURI'), max_length=255, blank=True, null=True, help_text=u'异常文件路径')

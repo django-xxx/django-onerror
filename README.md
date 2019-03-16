@@ -37,6 +37,8 @@ INSTALLED_APPS = (
     window.onerror = function(errorMessage, scriptURI, lineNo, columnNo, error) {
         // 构建错误对象
         var errorObj = {
+            href: window.location.href,
+            ua: window.navigator.userAgent,
             lineNo: lineNo || 0,
             columnNo: columnNo || 0,
             scriptURI: scriptURI || null,
