@@ -48,6 +48,9 @@ FrontEnd
 
     <script>
         window.onerror = function(errorMessage, scriptURI, lineNo, columnNo, error) {
+            if (['Uncaught ReferenceError: WeixinJSBridge is not defined', 'ResizeObserver loop limit exceeded'].indexOf(errorMessage) >= 0) {
+                return
+            }
             // 构建错误对象
             var errorObj = {
                 href: window.location.href,

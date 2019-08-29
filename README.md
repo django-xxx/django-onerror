@@ -35,6 +35,9 @@ INSTALLED_APPS = (
 ```javascript
 <script>
     window.onerror = function(errorMessage, scriptURI, lineNo, columnNo, error) {
+        if (['Uncaught ReferenceError: WeixinJSBridge is not defined', 'ResizeObserver loop limit exceeded'].indexOf(errorMessage) >= 0) {
+            return
+        }
         // 构建错误对象
         var errorObj = {
             href: window.location.href,
@@ -55,3 +58,8 @@ INSTALLED_APPS = (
     }
 </script>
 ```
+
+## Ignore
+* Uncaught ReferenceError: WeixinJSBridge is not defined
+* ResizeObserver loop limit exceeded
+    * [ResizeObserver - loop limit exceeded](https://stackoverflow.com/questions/49384120/resizeobserver-loop-limit-exceeded)
