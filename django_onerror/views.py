@@ -3,8 +3,9 @@
 import json
 
 from django.conf import settings
-from django_onerror.models import OnerrorReportInfo
 from django_response import response
+
+from django_onerror.models import OnerrorReportInfo
 
 
 def err_report(request):

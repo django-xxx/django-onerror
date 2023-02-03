@@ -3,6 +3,7 @@
 from django.conf import settings
 from django.contrib import admin
 from django_admin import DeleteOnlyModelAdmin
+
 from django_onerror.models import OnerrorReportInfo
 
 
