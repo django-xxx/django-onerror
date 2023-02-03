@@ -8,17 +8,19 @@ pip install django-onerror
 
 ## Urls.py
 ```python
+from django.urls import include, re_path
+
 urlpatterns = [
-    url(r'^e/', include('django_onerror.urls', namespace='django_onerror')),
+    re_path(r'^e/', include('django_onerror.urls', namespace='django_onerror')),
 ]
 ```
 or
 ```python
-from django.conf.urls import include, url
+from django.urls import include, re_path
 from django_onerror import views as err_views
 
 urlpatterns = [
-    url(r'^report', err_views.err_report, name='err_report'),
+    re_path(r'^report', err_views.err_report, name='err_report'),
 ]
 ```
 
